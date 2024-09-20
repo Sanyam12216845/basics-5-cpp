@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+int reverseNumber(int num) {
+    int reversed = 0;
+    while (num != 0) {
+        int digit = num % 10;  // Get the last digit
+        reversed = reversed * 10 + digit;  // Append digit to reversed number
+        num /= 10;  // Remove the last digit from num
+    }
+    return reversed;
+}
+
+int main() {
+	
+	
+	//N natural numbers
+	int n;
+	cout<<"Enter the number:"<<endl;
+	cin>>n;
+	cout<<"The n natural numbers are:"<<endl;
+
+	for(int i=1;i<=n;i++){
+		
+		cout<<i<<endl;
+	}
+	//Pallindrome or not 
+	string p;
+	string reversedStr;
+	cout<<"Enter a string:"<<endl;
+	cin>>p;
+	reversedStr=string(p.rbegin(), p.rend());  //reverse the string 
+	
+	//check the string if it is pallindrome or not
+	if(p==reversedStr){
+		cout<<"Given string is a pallindrome:"<<p<<endl;
+		
+	}
+	else{
+		cout<<"Given string is not a pallindrome:"<<p<<endl;
+	}
+	
+	
+	//print the sum of digits
+	int a;
+	int sum=0;
+	cout<<"Enter a number :"<<endl;
+	cin>>a;
+	while(a!=0){
+		sum=sum+a % 10;   //add  the last digit of the sum
+		a /= 10;        // remove the last digit from the number
+	}
+	cout<<"Sum of digits :"<<sum<<endl;
+	
+	//reverse of the number
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    int result = reverseNumber(num);
+    cout << "Reversed number: " << result << endl;
+    
+    
+
+    return 0;
+}
